@@ -1,5 +1,5 @@
 Name:                snaplet-influxdb
-Version:             1.0.1.1
+Version:             1.0.2
 Synopsis:            Snap framework snaplet for the InfluxDB library
 Homepage:            https://github.com/ixmatus/snaplet-influxdb
 License:             BSD3
@@ -49,9 +49,9 @@ Library
   Build-Depends:
     base                      >= 4.4     && < 5,
     snap                      >= 0.13    && < 0.14,
-    monad-control             >= 0.3     && < 0.4,
+    monad-control             >= 1       && < 2,
     text                      >= 1.0     && < 2.0,
-    http-client               >= 0.3     && < 0.4,
+    http-client               >= 0.4     && < 0.5,
     influxdb                  >= 0.9     && < 1.0,
     bytestring                >= 0.9     && < 11,
     lens                      >= 4       && < 5,
