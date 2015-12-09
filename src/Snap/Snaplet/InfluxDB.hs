@@ -92,8 +92,7 @@ runInflux action = do
 
 -------------------------------------------------------------------------------
 -- | Runs an INFLUX action in any monad with a HasInfluxPool instance.
-runInfluxPost :: (HasInfluxPool m) => (IN.Config -> IO r) -> m r
-runInfluxPost action = do
+runInfluxPost :: (HasInfluxPool m) => [Line] -> m ()
+runInfluxPost series = do
     (InfluxPool db pool) <- getInfluxPool
-    liftIO $ postWithPrecision pool db SecondsPrecision $ do
-        liftIO $! action pool
+    liftIO $ postWithPrecision pool db SecondsPrecision series
